@@ -1,21 +1,19 @@
-﻿using E_Commerce.Models;
+﻿using E_Commerce.Migrations;
+using E_Commerce.Models;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
+using System.Data.Entity.Migrations;
 using System.Linq;
 using System.Web;
 
 namespace E_Commerce.DAL
 {
-    public class ProductsInitializer: DropCreateDatabaseAlways<ProductsContext>
+    public class ProductsInitializer: MigrateDatabaseToLatestVersion<ProductsContext, Configuration>
     {
-        protected override void Seed(ProductsContext context)
-        {
-            SeedProductsData(context);
-            base.Seed(context);
-        }
 
-        private void SeedProductsData(ProductsContext context)
+
+        public static void SeedProductsData(ProductsContext context)
         {
             var category = new List<Category>
             {
@@ -23,7 +21,7 @@ namespace E_Commerce.DAL
                 new Category() { CategoryId=2, NameCategory="Technologies", NameFileIcon="Technologies.png", DescriptionCategory="Opis technologies" },
                 new Category() { CategoryId=3, NameCategory="Home", NameFileIcon="Home.png", DescriptionCategory="Opis home" }
             };
-            category.ForEach(k=> context.Categories.Add(k));
+            category.ForEach(k=> context.Categories.AddOrUpdate(k));
             context.SaveChanges();
 
             var products = new List<Product>
@@ -32,7 +30,7 @@ namespace E_Commerce.DAL
 
 
             };
-            products.ForEach(k => context.Products.Add(k));
+            products.ForEach(k => context.Products.AddOrUpdate(k));
             context.SaveChanges();
 
 
