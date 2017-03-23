@@ -1,0 +1,23 @@
+﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+
+namespace E_Commerce.Models
+{
+    public class Category
+    {
+        public int CategoryId { get; set; }
+        [Required(ErrorMessage = "Wprowadź nazwę kategorii")]
+        [StringLength(100)]
+        public string NameCategory { get; set; }
+        [Required(ErrorMessage = "Wprowadź opis kategorii")]
+        public string DescriptionCategoryi { get; set; }
+        public string NameFileIcon { get; set; }
+
+        public virtual ICollection<Product> Products { get; set; }
+
+
+
+
+
+    }
+}
