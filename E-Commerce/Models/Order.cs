@@ -12,7 +12,6 @@ namespace E_Commerce.Models
 
         public string UserId { get; set; }
 
-        public virtual ApplicationUser user { get; set; }
 
         [Required(ErrorMessage = "Wprowadź imię")]
         [StringLength(50)]

@@ -10,7 +10,7 @@ namespace E_Commerce.Models
         [StringLength(100)]
         public string NameCategory { get; set; }
         [Required(ErrorMessage = "Wprowadź opis kategorii")]
-        public string DescriptionCategoryi { get; set; }
+        public string DescriptionCategory { get; set; }
         public string NameFileIcon { get; set; }
 
         public virtual ICollection<Product> Products { get; set; }
