@@ -15,6 +15,14 @@ namespace E_Commerce.DAL
 
         }
 
+        static ProductsContext()
+        {
+            Database.SetInitializer < ProductsContext >(new ProductsInitializer());
+        }
+
+
+
+
         public DbSet<Product> Products { get; set; }
         public DbSet<Category> Categories { get; set; }
         public DbSet<Order> Orders { get; set; }

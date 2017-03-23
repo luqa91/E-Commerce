@@ -13,9 +13,10 @@ namespace E_Commerce.Controllers
         private ProductsContext db = new ProductsContext();
         public ActionResult Index()
         {
-            Category category = new Category {NameCategory="Electronics", NameFileIcon="electronics.png", DescriptionCategory="opis" };
-            db.Categories.Add(category);
-            db.SaveChanges();
+
+            var ListCategory = db.Categories.ToList();
+
+
             return View();
         }
 
