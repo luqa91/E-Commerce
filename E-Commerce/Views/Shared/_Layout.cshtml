@@ -1,11 +1,13 @@
 ﻿<!DOCTYPE HTML>
 <html>
 <head>
-    <title>Solid State by HTML5 UP</title>
+    <title>@ViewBag.Title</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="">
+    <meta name="author" content="">
     <!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
-    <link rel="stylesheet" href="~/Content/assets/css/main.css" />
+    <link rel="stylesheet" href="@Url.Content("~/Content/assets/css/main.css")" />
     <!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
     <!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
 </head>
@@ -18,6 +20,7 @@
         <header id="header" class="alt">
             <h1><a href="index.html">Solid State</a></h1>
             <nav>
+                <a href="#" id="cart"><i class="fa fa-shopping-cart"></i> Cart <span class="badge">3</span></a>
                 <a href="#menu">Menu</a>
             </nav>
         </header>
@@ -38,12 +41,22 @@
         </nav>
 
 
+  
+
+
+
+
+
+
+
+
+
         @RenderBody()
 
 
       
         <!-- Footer -->
-        <section id="footer">
+        <footer id="footer">
             <div class="inner">
                 <h2 class="major">Get in touch</h2>
                 <p>Cras mattis ante fermentum, malesuada neque vitae, eleifend erat. Phasellus non pulvinar erat. Fusce tincidunt, nisl eget mattis egestas, purus ipsum consequat orci, sit amet lobortis lorem lacus in tellus. Sed ac elementum arcu. Quisque placerat auctor laoreet.</p>
@@ -81,7 +94,7 @@
                     <li>Design: Łukasz Kaczmarek</li>
                 </ul>
             </div>
-        </section>
+        </footer>
 
     </div>
 
